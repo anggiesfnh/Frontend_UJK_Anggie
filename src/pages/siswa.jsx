@@ -170,19 +170,19 @@ function Siswa() {
                         <div className="modal-body">
                             <form onSubmit={handleSubmit}>
                                 <div className="form-floating mb-2">
-                                    <input type="text" className="form-control" placeholder="Nama Siswa" value={nama} onChange={(e) => setNama(e.target.value)} />
+                                    <input type="text" className="form-control" placeholder="Nama Siswa" value={nama} onChange={(e) => setNama(e.target.value)} required />
                                     <label>Nama</label>
                                 </div>
                                 <div className="form-floating mb-2">
-                                    <input type="text" className="form-control" placeholder="Alamat Siswa" value={alamat} onChange={(e) => setAlamat(e.target.value)} />
+                                    <input type="text" className="form-control" placeholder="Alamat Siswa" value={alamat} onChange={(e) => setAlamat(e.target.value)} required />
                                     <label>Alamat</label>
                                 </div>
                                 <div className="form-floating mb-2">
-                                    <input type="date" className="form-control" placeholder="Tanggal Lahir" value={tanggal_lahir} onChange={(e) => setTanggalLahir(e.target.value)} />
+                                    <input type="date" className="form-control" placeholder="Tanggal Lahir" value={tanggal_lahir} onChange={(e) => setTanggalLahir(e.target.value)} required />
                                     <label>Tanggal Lahir</label>
                                 </div>
                                 <div className="form-floating mb-2">
-                                    <select className="form-select" aria-label="Default select example" value={jurusan} onChange={(e) => setJurusan(e.target.value)}>
+                                    <select className="form-select" aria-label="Default select example" value={jurusan} onChange={(e) => setJurusan(e.target.value)} required >
                                         <option defaultValue="" disabled>--- Jurusan ---</option>
                                         <option value="Software Engineer">Software Engineer</option>
                                         <option value="Computer Science">Computer Science</option>
