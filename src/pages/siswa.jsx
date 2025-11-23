@@ -71,14 +71,6 @@ function Siswa() {
                 if (modalInstance) {
                     modalInstance.hide();
                 }
-
-                // hapus drackdrop klo ada
-                // document.querySelectorAll(".modal-backdrop").forEach(bd => bd.remove());
-
-                // // scrollable
-                // document.body.classList.remove("modal-open");
-                // document.body.style.overflow = "";
-                // document.body.style.paddingRight = "";
             });
     }
 
@@ -146,7 +138,12 @@ function Siswa() {
                                     <td>{siswa.kode_siswa}</td>
                                     <td>{siswa.nama}</td>
                                     <td>{siswa.alamat}</td>
-                                    <td>{siswa.tanggal_lahir}</td>
+                                    <td>{new Date(siswa.tanggal_lahir).toLocaleDateString('id-ID', {
+                                        day: 'numeric',
+                                        month: 'long',
+                                        year: 'numeric'
+                                    })}
+                                    </td>
                                     <td>{siswa.jurusan}</td>
                                     <td>
                                         <button className="btn btn-danger m-2" onClick={() => handleDelete(siswa.id)}><FaTrash /></button>
@@ -183,7 +180,7 @@ function Siswa() {
                                 </div>
                                 <div className="form-floating mb-2">
                                     <select className="form-select" aria-label="Default select example" value={jurusan} onChange={(e) => setJurusan(e.target.value)} required >
-                                        <option defaultValue="" disabled>--- Jurusan ---</option>
+                                        <option value="" disabled hidden>--- Jurusan ---</option>
                                         <option value="Software Engineer">Software Engineer</option>
                                         <option value="Computer Science">Computer Science</option>
                                         <option value="Cyber Security">Cyber Security</option>
